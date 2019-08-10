@@ -21,3 +21,8 @@ Route.on('/').render('welcome')
 Route.group('crawl', () => {
   Route.get('/', 'Crawl/CrawlFacade.crawlTranslators')
 }).prefix(`${baseRoute}/crawl`)
+
+Route.group('webhook', () => {
+  Route.get('/', 'Webhook/WebhookFacade.hook')
+  Route.post('/', 'Webhook/WebhookFacade.getHook')
+}).prefix(`${baseRoute}/webhook`)
